@@ -19,7 +19,7 @@
 <div class="container">
   <div class="badge">Legal</div>
   <h1>Privacy Policy — Flipside</h1>
-  <p class="meta">Last updated: August 15, 2026 &nbsp;·&nbsp; CyborgDev</p>
+  <p class="meta">Last updated: August 18, 2026 &nbsp;·&nbsp; CyborgDev</p>
 
   <p>Flipside scans food labels and scores them. This policy explains, in plain language, what the app does with information — because most of the answer is "nothing", and the parts that aren't should be easy to check.</p>
 
@@ -36,10 +36,19 @@
   <p>Deleting the app deletes all of it. "Reset everything" in Settings does the same without uninstalling.</p>
 
   <h2>Photographs of labels</h2>
-  <p>When a product's record is incomplete, Flipside offers to read the label with your camera.</p>
-  <p><strong>The photograph never leaves your phone.</strong> Text recognition runs entirely on the device. The image is not uploaded, not stored, and not sent to us or to anyone else. Only the text read from it is used, and only as described below.</p>
+  <p>When a product is not in our catalogue, or its record is missing the parts we need to score it, Flipside offers to read the label with your camera. You are asked for a photograph of the ingredients label, and one of the front of the pack so that other people can recognise the product.</p>
+  <p><strong>Those photographs are sent to a reading service to be transcribed.</strong> They go to our own server, which passes them to Google's Gemini API and receives back the words printed on the label — the ingredient list, the nutrition figures, the brand and the product name. That is all the service is asked for; it is not asked to judge the food, and the score itself is worked out on your phone afterwards.</p>
+  <p>What that means in practice:</p>
+  <ul>
+    <li><strong>We do not keep the photographs.</strong> Our server passes them on and returns the text. Nothing is written to a database or a file store, and the images are not attached to you, to an account, or to any identifier.</li>
+    <li><strong>Google does not train on them.</strong> Flipside uses the paid Gemini API, which carries a contractual restriction against using submitted content to improve Google's products. Their free tier does not carry that restriction, and we do not use it. Google's own terms govern the short period they hold a request for abuse monitoring.</li>
+    <li><strong>The picture of the front of the pack stays on your phone.</strong> It becomes the product's thumbnail in your own history. It is not uploaded to any shared store, and other people do not see it.</li>
+    <li><strong>If the reading service cannot be reached, the reading happens entirely on your phone</strong> using the recogniser built into the app, and in that case no photograph leaves the device at all. Reading a label always works offline; it just works less well on curved packs.</li>
+  </ul>
+  <p>Only the <em>text</em> from a reading is ever shared with other users, and only if you have turned that on — see "Label readings you contribute" below.</p>
 
   <h2>What leaves your phone</h2>
+  <p>Photographs you take of a label are one of these, and they are described in full in the section above. The rest is below.</p>
 
   <h3>1. The barcode you scan</h3>
   <p>To look a product up, the barcode is sent to:</p>
@@ -47,6 +56,7 @@
     <li><strong>Open Food Facts</strong> (openfoodfacts.org), an open food database. Their servers receive the barcode and, as with any internet request, your device's IP address. Their privacy policy governs what they do with it.</li>
     <li><strong>USDA FoodData Central</strong>, a US government food database — reached through our own server, so USDA sees our request rather than your device.</li>
   </ul>
+  <p>When our record for a barcode has no ingredient list, we also ask Open Food Facts whether it holds another record of the same product — the same database, one further request, carrying the product's brand and name rather than anything about you.</p>
   <p>We do not keep a record of which barcodes you scanned. The history is on your phone only.</p>
 
   <h3>2. Label readings you contribute — optional, on by default</h3>
