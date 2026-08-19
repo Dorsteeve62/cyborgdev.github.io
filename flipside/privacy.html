@@ -21,82 +21,104 @@
   <h1>Privacy Policy — Flipside</h1>
   <p class="meta">Last updated: August 18, 2026 &nbsp;·&nbsp; CyborgDev</p>
 
-  <p>Flipside scans food labels and scores them. This policy explains, in plain language, what the app does with information — because most of the answer is "nothing", and the parts that aren't should be easy to check.</p>
-
-  <p>There are no accounts, no analytics, no advertising, and no trackers. Nothing about you is sold, rented, or shared with anyone.</p>
-
+  <p>Flipside scans food labels and scores them. This policy says what the app does with information, in plain language.</p>
+  <p>Three things are worth knowing up front, and the rest of this page is the detail behind them:</p>
+  <ul>
+  <li><strong>There is no account</strong>, so there is nothing to sign up for and nothing to sign in to.</li>
+  <li><strong>The words printed on a food packet travel; you do not.</strong> Barcodes, ingredient lists and nutrition panels are facts about products on a shelf. Nothing we send or store identifies a person.</li>
+  <li><strong>Nothing about you is sold, rented or shared with anyone</strong>, and there is no advertising and no tracking.</li>
+  </ul>
   <h2>What stays on your phone</h2>
   <p>All of this is stored on your device and is never sent anywhere:</p>
   <ul>
-    <li><strong>Your scan history</strong> — every product you have scanned, and its score.</li>
-    <li><strong>Products you have saved.</strong></li>
-    <li><strong>Your preferences</strong> — allergens you asked us to flag, how you eat, what you are cutting down on, whether you are scanning for children.</li>
-    <li><strong>A cache of products</strong> you have looked at, so the app works without a signal.</li>
+  <li><strong>Your scan history</strong> — every product you have scanned, and its score.</li>
+  <li><strong>Products you have saved.</strong></li>
+  <li><strong>Your preferences</strong> — allergens you asked us to flag, how you eat, what you are cutting down on, whether you are scanning for children.</li>
+  <li><strong>A cache of products</strong> you have looked at, so the app works without a signal.</li>
   </ul>
   <p>Deleting the app deletes all of it. "Reset everything" in Settings does the same without uninstalling.</p>
-
   <h2>Photographs of labels</h2>
   <p>When a product is not in our catalogue, or its record is missing the parts we need to score it, Flipside offers to read the label with your camera. You are asked for a photograph of the ingredients label, and one of the front of the pack so that other people can recognise the product.</p>
   <p><strong>Those photographs are sent to a reading service to be transcribed.</strong> They go to our own server, which passes them to Google's Gemini API and receives back the words printed on the label — the ingredient list, the nutrition figures, the brand and the product name. That is all the service is asked for; it is not asked to judge the food, and the score itself is worked out on your phone afterwards.</p>
   <p>What that means in practice:</p>
   <ul>
-    <li><strong>We do not keep the photographs.</strong> Our server passes them on and returns the text. Nothing is written to a database or a file store, and the images are not attached to you, to an account, or to any identifier.</li>
-    <li><strong>Google does not train on them.</strong> Flipside uses the paid Gemini API, which carries a contractual restriction against using submitted content to improve Google's products. Their free tier does not carry that restriction, and we do not use it. Google's own terms govern the short period they hold a request for abuse monitoring.</li>
-    <li><strong>The picture of the front of the pack stays on your phone.</strong> It becomes the product's thumbnail in your own history. It is not uploaded to any shared store, and other people do not see it.</li>
-    <li><strong>If the reading service cannot be reached, the reading happens entirely on your phone</strong> using the recogniser built into the app, and in that case no photograph leaves the device at all. Reading a label always works offline; it just works less well on curved packs.</li>
+  <li><strong>We do not keep the photographs.</strong> Our server passes them on and returns the text. Nothing is written to a database or a file store, and the images are not attached to you, to an account, or to any identifier.</li>
+  <li><strong>Google does not train on them.</strong> Flipside uses the paid Gemini API, which carries a contractual restriction against using submitted content to improve Google's products. Their free tier does not carry that restriction, and we do not use it. Google's own terms govern the short period they hold a request for abuse monitoring.</li>
+  <li><strong>The picture of the front of the pack stays on your phone.</strong> It becomes the product's thumbnail in your own history. It is not uploaded to any shared store, and other people do not see it.</li>
+  <li><strong>If the reading service cannot be reached, the reading happens entirely on your phone</strong> using the recogniser built into the app, and in that case no photograph leaves the device at all. Reading a label always works offline; it just works less well on curved packs.</li>
   </ul>
-  <p>Only the <em>text</em> from a reading is ever shared with other users, and only if you have turned that on — see "Label readings you contribute" below.</p>
-
+  <p>Only the <em>text</em> from a reading is ever shared with other users — see "Label readings you contribute" below, including why there is no longer a switch for it.</p>
+  <h2>Explaining an ingredient</h2>
+  <p>Tapping a marked word in an ingredient list opens what that substance is, what it is doing in the food, and its published daily limit where one exists. <strong>All of that is written into the app and works with no signal at all.</strong></p>
+  <p>Under it there is a button reading <em>Explain this in plain words</em>. Only if you press it, we send three things to the same reading service: <strong>the name of that one ingredient, the sentence the app has just shown you, and the product's name.</strong> Nothing else — not the rest of the label, not the score, not your preferences, not anything about you or your phone. The answer comes back, is shown under the sentence you already had, and is kept in memory until you close the app.</p>
+  <p>Nothing is sent unless you press it, and if the service cannot be reached the app simply keeps the explanation it already gave you.</p>
   <h2>What leaves your phone</h2>
-  <p>Photographs you take of a label are one of these, and they are described in full in the section above. The rest is below.</p>
-
+  <p>Photographs you take of a label are one of these, and they are described in full in the section above, as is the ingredient explanation. The rest is below.</p>
   <h3>1. The barcode you scan</h3>
   <p>To look a product up, the barcode is sent to:</p>
   <ul>
-    <li><strong>Open Food Facts</strong> (openfoodfacts.org), an open food database. Their servers receive the barcode and, as with any internet request, your device's IP address. Their privacy policy governs what they do with it.</li>
-    <li><strong>USDA FoodData Central</strong>, a US government food database — reached through our own server, so USDA sees our request rather than your device.</li>
+  <li><strong>Open Food Facts</strong> (openfoodfacts.org), an open food database. Their servers receive the barcode and, as with any internet request, your device's IP address. Their privacy policy governs what they do with it.</li>
+  <li><strong>USDA FoodData Central</strong>, a US government food database — reached through our own server, so USDA sees our request rather than your device.</li>
   </ul>
   <p>When our record for a barcode has no ingredient list, we also ask Open Food Facts whether it holds another record of the same product — the same database, one further request, carrying the product's brand and name rather than anything about you.</p>
   <p>We do not keep a record of which barcodes you scanned. The history is on your phone only.</p>
-
-  <h3>2. Label readings you contribute — optional, on by default</h3>
-  <p>If <strong>"Share labels you photograph"</strong> is on in Settings, then when you photograph a panel we could not otherwise read, the figures from it are added to a shared record so the next person who scans that product gets them too.</p>
+  <h3>2. Label readings you contribute</h3>
+  <p>When you photograph a panel we could not otherwise read, the figures from it are added to a shared record, so the next person who scans that product gets them too. This is how the app gets better: every label read once is a product nobody else has to photograph.</p>
+  <p><strong>The photograph itself is never part of this</strong> — only the words that were printed on the packet.</p>
   <p>What is sent:</p>
   <ul>
-    <li>the barcode</li>
-    <li>the nutrition figures on the panel</li>
-    <li>the ingredient list text</li>
-    <li>the date, <strong>rounded to the day</strong></li>
+  <li>the barcode</li>
+  <li>the nutrition figures on the panel</li>
+  <li>the ingredient list text</li>
+  <li>the date, <strong>rounded to the day</strong></li>
   </ul>
   <p>What is <strong>not</strong> sent, and is not stored anywhere in that record:</p>
   <ul>
-    <li>any device identifier</li>
-    <li>any account (there are none)</li>
-    <li>your IP address</li>
-    <li>your location</li>
-    <li>anything else about you or your phone</li>
+  <li>any device identifier</li>
+  <li>any account (there are none)</li>
+  <li>your IP address</li>
+  <li>your location</li>
+  <li>anything else about you or your phone</li>
   </ul>
-  <p>Because no identifier is stored, two people photographing the same tub produce identical entries. There is no way for us — or for anyone reading the database — to tell which readings came from which person, or to link any two readings together. This is a deliberate design choice, and it is why we cannot offer to delete "your" contributions: after they are made, there is nothing that marks them as yours.</p>
-  <p>You can turn this off at any time in <strong>Settings → Share labels you photograph</strong>. Turning it off stops any further contributions immediately. Photographed labels still work — they just fix the product for you alone.</p>
-
-  <h3>3. Reports you choose to send</h3>
-  <p>If the app hits an error, or if you tap <strong>"This looks wrong"</strong> on a product, it prepares a report and hands it to your phone's share sheet. <strong>Nothing is sent until you choose to send it, and it goes wherever you send it.</strong></p>
-  <p>A crash report contains the error and where in the app it happened. A product report contains the barcode and the label figures we were using. Neither contains anything about you.</p>
-
-  <h3>4. Your subscription</h3>
+  <p>Because no identifier is stored, two people photographing the same tub produce identical entries. There is no way for us — or for anyone reading the database — to tell which readings came from which person, or to link any two readings together. That is also why we cannot offer to delete "your" contributions: once made, there is nothing that marks them as yours.</p>
+  <p><strong>There used to be a switch for this in Settings, and it was removed on 18 August 2026.</strong> What travels is an ingredient list and a nutrition panel — the text on the outside of a packet, carrying nothing about the person who read it — and asking permission for that suggested a risk that is not there. If you would rather a particular reading were not in the shared record, write to us and we can remove or suppress entries for a barcode.</p>
+  <h3>3. Reports</h3>
+  <p><strong>"This looks wrong"</strong> on a product sends us a report when you tap it. What is sent is the barcode, the label the score was calculated from, the score itself and which version of the scoring produced it — the same shape, and the same rules, as a shared label reading:</p>
+  <ul>
+  <li>no device identifier</li>
+  <li>no account (there are none)</li>
+  <li>no location</li>
+  <li>nothing else about you or your phone</li>
+  <li>the date, <strong>rounded to the day</strong></li>
+  </ul>
+  <p>We send it because the disagreement is only useful with the label attached: most reports turn out to be products whose public record is too thin to score well, and with the label we can rebuild exactly what the app did and check it. Nobody can read that table back out — reports go in and are never readable from the app or by anyone using it.</p>
+  <p><strong>Crash reports are different and still ask you.</strong> If the app falls over it prepares a report and hands it to your phone's share sheet: nothing is sent until you choose to send it, and it goes wherever you send it. That report contains the error and where in the app it happened, and nothing about you.</p>
+  <h3>4. Counts of what the app could not do</h3>
+  <p>Flipside keeps a small number of daily counts on our own server, so that we can see when the app is failing at something. There is no analytics service, no SDK, and nothing that follows a person between screens, between scans or between days.</p>
+  <p>What is counted is a list of about a dozen things that either worked or did not: a scan that produced a score, a scan we refused to score, a scan where we could only read part of the label, a barcode our catalogue does not hold, a label read in the cloud, a label read on the phone instead, a photograph that still did not yield enough to score, and whether a product had any better options to show.</p>
+  <p>Five of those counts carry <strong>the barcode</strong> — the ones about a product we could not answer for. That is how we find out which products are failing, so we can fix them. A barcode is a fact about a packet on a shelf, not about the person holding it.</p>
+  <p>What is stored is a running total per day. What is <strong>not</strong> stored, anywhere in it:</p>
+  <ul>
+  <li>any device identifier</li>
+  <li>any account (there are none)</li>
+  <li>your IP address</li>
+  <li>your location</li>
+  <li>the time of day</li>
+  <li>which counts came from the same phone, or the same scan, or the same person</li>
+  <li>anything at all about you or your phone</li>
+  </ul>
+  <p>Because there is no identifier and no timestamp finer than the day, a count is a number and nothing else: there is no way for us, or for anyone else, to tell which phone added to it, or to link any two counts together. Nobody can read that table back out through the app.</p>
+  <p>We added this because the alternative was worse. Every fault we have fixed was found by testing on our own phone; anything that only goes wrong on somebody else's simply stayed broken, quietly, for everybody. A count that says "one scan in twelve of this barcode ends with no score" is the difference between that and a fix.</p>
+  <h3>5. Your subscription</h3>
   <p>Subscriptions are handled entirely by Apple. Payment details are never seen by Flipside — we receive only whether a subscription is active. Apple's privacy policy covers that transaction.</p>
-
   <h2>Children</h2>
   <p>Flipside is not directed at children under 13, and we do not knowingly collect information from them. The app has a setting for scanning food <em>for</em> children; that preference is stored on the phone and sent nowhere.</p>
-
   <h2>Your rights</h2>
   <p>Data protection law gives you rights to access, correct, and delete personal information held about you.</p>
-  <p>We hold none. There are no accounts, no profiles, and nothing in our records that identifies a person. If you would like to remove everything Flipside holds about you, deleting the app does it completely.</p>
+  <p>There are no accounts and no profiles, and nothing in our records identifies a person — so there is no file to send you, correct or delete. Deleting the app removes everything held on your phone.</p>
   <p>If you believe a shared label entry is wrong, tap <strong>"This looks wrong"</strong> on the product or write to us — we can remove or suppress entries for a barcode.</p>
-
   <h2>Changes to this policy</h2>
   <p>If this changes, the date at the top changes with it, and any change that affects what leaves your phone will be said plainly in the app before it takes effect.</p>
-
   <h2>Contact</h2>
   <p>Questions about this policy, or about anything above:</p>
   <p><strong><a href="mailto:support@cyborgdev.co">support@cyborgdev.co</a></strong></p>
