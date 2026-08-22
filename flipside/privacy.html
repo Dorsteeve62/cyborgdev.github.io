@@ -19,7 +19,7 @@
 <div class="container">
   <div class="badge">Legal</div>
   <h1>Privacy Policy — Flipside</h1>
-  <p class="meta">Last updated: August 18, 2026 &nbsp;·&nbsp; CyborgDev</p>
+  <p class="meta">Last updated: August 22, 2026 &nbsp;·&nbsp; CyborgDev</p>
 
   <p>Flipside scans food labels and scores them. This policy says what the app does with information, in plain language.</p>
   <p>Three things are worth knowing up front, and the rest of this page is the detail behind them:</p>
@@ -42,16 +42,35 @@
   <p><strong>Those photographs are sent to a reading service to be transcribed.</strong> They go to our own server, which passes them to Google's Gemini API and receives back the words printed on the label — the ingredient list, the nutrition figures, the brand and the product name. That is all the service is asked for; it is not asked to judge the food, and the score itself is worked out on your phone afterwards.</p>
   <p>What that means in practice:</p>
   <ul>
-  <li><strong>We do not keep the photographs.</strong> Our server passes them on and returns the text. Nothing is written to a database or a file store, and the images are not attached to you, to an account, or to any identifier.</li>
+  <li><strong>We do not keep the photograph of the label.</strong> Our server passes it on and returns the text. Nothing about it is written to a database or a file store. The photograph of the <em>front</em> of the pack is the one exception and it is described below; neither is attached to you, to an account, or to any identifier.</li>
   <li><strong>Google does not train on them.</strong> Flipside uses the paid Gemini API, which carries a contractual restriction against using submitted content to improve Google's products. Their free tier does not carry that restriction, and we do not use it. Google's own terms govern the short period they hold a request for abuse monitoring.</li>
-  <li><strong>The picture of the front of the pack stays on your phone.</strong> It becomes the product's thumbnail in your own history. It is not uploaded to any shared store, and other people do not see it.</li>
+  <li><strong>The picture of the front of the pack is kept, and other people see it.</strong> It becomes the product's thumbnail in your own history, and it is also stored against the barcode so that the next person who scans that product sees the packet instead of an empty grey circle. It is stored only when the reading service confirms the photograph shows the outside of a packaged food or drink; anything else is discarded and stays on your phone. Only the first photograph of a barcode is kept — a later one is refused, so nobody can replace a product's picture once it exists. The file is named after the barcode and nothing else: it carries no identifier, no date, no location and nothing about the person who took it, and it cannot be traced back to you or linked to any other photograph. <strong>The photograph of the ingredients panel is never kept</strong> — it is passed to the reading service, transcribed, and dropped. If you would rather not contribute a picture, skip the second photograph: the reading works from the ingredients panel alone.</li>
   <li><strong>If the reading service cannot be reached, the reading happens entirely on your phone</strong> using the recogniser built into the app, and in that case no photograph leaves the device at all. Reading a label always works offline; it just works less well on curved packs.</li>
   </ul>
-  <p>Only the <em>text</em> from a reading is ever shared with other users — see "Label readings you contribute" below, including why there is no longer a switch for it.</p>
+  <p>What a reading shares with other users is the <em>text</em> from the panel and the picture of the front of the pack — see "Label readings you contribute" below, including why there is no longer a switch for the text.</p>
   <h2>Explaining an ingredient</h2>
   <p>Tapping a marked word in an ingredient list opens what that substance is, what it is doing in the food, and its published daily limit where one exists. <strong>All of that is written into the app and works with no signal at all.</strong></p>
-  <p>Under it there is a button reading <em>Explain this in plain words</em>. Only if you press it, we send three things to the same reading service: <strong>the name of that one ingredient, the sentence the app has just shown you, and the product's name.</strong> Nothing else — not the rest of the label, not the score, not your preferences, not anything about you or your phone. The answer comes back, is shown under the sentence you already had, and is kept in memory until you close the app.</p>
-  <p>Nothing is sent unless you press it, and if the service cannot be reached the app simply keeps the explanation it already gave you.</p>
+  <p>Under it there is a button reading <em>Explain this in plain words</em>. Only if you press it, we send to the same reading service: <strong>the name of that one ingredient, the sentence the app has just shown you, and the product's name</strong> — and, in one case only, <strong>the name of an allergen you asked to be warned about.</strong> The answer comes back, is shown under the sentence you already had, and is kept in memory until you close the app.</p>
+  <p><strong>About that allergen.</strong> If you have told Flipside to warn you about milk, and the app has already warned you about milk on the product you are looking at, then pressing that button also sends the word <em>Milk</em> — so the answer can say which of the ingredients is the reason you are being warned. That is the whole of it, and the limits are worth stating plainly:</p>
+  <ul>
+  <li>It is sent <strong>only when the warning is already on your screen</strong> for that product. An allergen you asked about that this product does not contain is never sent.</li>
+  <li>It is the app's own conclusion, not your list. The reading service is never told what you avoid in general, what diet you follow, whether you are shopping for a child, or anything else from your answers.</li>
+  <li>Nothing is sent unless you press the button. Never on a scan, never in the background.</li>
+  <li>It carries no identifier of any kind, so two people tapping the same word on the same product send identical requests and there is no way to tell them apart or to link one request to another.</li>
+  <li>The service is never told whether a product is safe for you, and is instructed never to say so. <strong>Whether you can eat something comes from the label's own "Contains" statement and from your doctor</strong> — not from a sentence a model wrote.</li>
+  </ul>
+  <p>An allergy is health information, which is why it is described here in this much detail rather than folded into the sentence above. If you would rather it never left the device, do not press the button, or remove the allergen in Settings.</p>
+  <p>If the service cannot be reached the app simply keeps the explanation it already gave you.</p>
+  <h2>Asking a question about a packet</h2>
+  <p>Under the verdict there is a box you can type a question into. <strong>Nothing is sent until you press Ask.</strong></p>
+  <p>When you do, two things go to the same reading service: <strong>your question, exactly as you typed it, and the screen you are looking at</strong> — the rows the app has already filled in about that product, the additives it named, anything the label did not state, and the ingredient list as printed. The answer is written out of those and nothing else.</p>
+  <ul>
+  <li><strong>Your question is not stored.</strong> The service passes it on and returns an answer. Our own log records only how many characters long the question was, because a log of what people typed would be the one record here that is about a person rather than about a packet.</li>
+  <li><strong>The score is not sent.</strong> The service is never told what the app scored the product, so it cannot agree with the number, argue with it, or make one up.</li>
+  <li><strong>Nothing about you is sent</strong> — not your preferences, not your history, not what else you have scanned. The single exception is the same one described above: where the app has already warned you about an allergen on that product, the name of that allergen is part of the screen being sent.</li>
+  <li><strong>It will not tell you whether a food suits you.</strong> It is instructed to say what was measured and to leave that judgement to you and your doctor.</li>
+  </ul>
+  <p>The answer is kept in memory until you close the app, and never written to the phone's storage.</p>
   <h2>What leaves your phone</h2>
   <p>Photographs you take of a label are one of these, and they are described in full in the section above, as is the ingredient explanation. The rest is below.</p>
   <h3>1. The barcode you scan</h3>
@@ -64,13 +83,14 @@
   <p>We do not keep a record of which barcodes you scanned. The history is on your phone only.</p>
   <h3>2. Label readings you contribute</h3>
   <p>When you photograph a panel we could not otherwise read, the figures from it are added to a shared record, so the next person who scans that product gets them too. This is how the app gets better: every label read once is a product nobody else has to photograph.</p>
-  <p><strong>The photograph itself is never part of this</strong> — only the words that were printed on the packet.</p>
+  <p><strong>The photograph of the panel is never part of this</strong> — only the words that were printed on it. The photograph of the <em>front</em> of the pack is shared, as its own thing, under the rules in "Photographs of labels" above: only if the reading service confirms it is a packaged food, only the first one per barcode, named after the barcode and carrying nothing else.</p>
   <p>What is sent:</p>
   <ul>
   <li>the barcode</li>
   <li>the nutrition figures on the panel</li>
   <li>the ingredient list text</li>
   <li>the date, <strong>rounded to the day</strong></li>
+  <li>the photograph of the front of the pack, where you took one</li>
   </ul>
   <p>What is <strong>not</strong> sent, and is not stored anywhere in that record:</p>
   <ul>
