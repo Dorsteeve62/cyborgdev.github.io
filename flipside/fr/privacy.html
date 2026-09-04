@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — Flipside</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header>
+  <a href="/index.html">CyborgDev</a>
+  <nav>
+    <a href="privacy.html">Confidentialité Flipside</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="badge">Mentions légales</div>
+  <h1>Politique de confidentialité — Flipside</h1>
+  <p class="meta">Dernière mise à jour : 4 septembre 2026 &nbsp;·&nbsp; CyborgDev</p>
+
+  <p>Flipside scanne les étiquettes alimentaires et leur attribue une note. Cette page dit ce que l'application fait des informations, en langage ordinaire.</p>
+  <p>Trois choses méritent d'être sues d'emblée, et le reste de cette page en est le détail :</p>
+  <ul>
+  <li><strong>Il n'y a pas de compte</strong>, donc rien à créer et rien auquel se connecter.</li>
+  <li><strong>Ce sont les mots imprimés sur un emballage qui circulent, pas vous.</strong> Un code-barres, une liste d'ingrédients et un tableau nutritionnel sont des faits sur des produits en rayon. Rien de ce que nous envoyons ou conservons n'identifie une personne.</li>
+  <li><strong>La plupart des scans n'envoient plus rien du tout.</strong> L'application peut garder sur votre téléphone une copie des produits du pays ; quand un code-barres s'y trouve, rien de ce scan ne quitte l'appareil — pas même le code-barres.</li>
+  <li><strong>Rien vous concernant n'est vendu, loué ni communiqué à qui que ce soit</strong>, et il n'y a ni publicité ni pistage.</li>
+  </ul>
+  <h2>Ce qui reste sur votre téléphone</h2>
+  <p>Tout ceci est stocké sur votre appareil et n'est jamais envoyé nulle part :</p>
+  <ul>
+  <li><strong>Votre historique de scans</strong> — chaque produit scanné, et sa note.</li>
+  <li><strong>Les produits que vous avez enregistrés.</strong></li>
+  <li><strong>Vos préférences</strong> — les allergènes que vous nous avez demandé de signaler, votre façon de manger, ce que vous réduisez, et si vous scannez pour des enfants.</li>
+  <li><strong>Un cache des produits</strong> que vous avez consultés, pour que l'application fonctionne sans réseau.</li>
+  <li><strong>Le fichier des produits</strong>, si vous l'avez téléchargé — une copie du catalogue alimentaire du pays, environ 350 Mo, pour qu'un scan trouve sa réponse sans rien demander à personne. Toute personne qui le télécharge reçoit le même fichier ; rien vous concernant ne s'y trouve, et le télécharger ne nous apprend rien d'autre qu'un fichier a été récupéré. Il est construit à partir des données publiées d'Open Food Facts et est reversé sous la même licence ouverte. Vous pouvez le supprimer dans les Réglages, et le scan continue comme avant.</li>
+  </ul>
+  <p>Supprimer l'application supprime tout cela. « Tout réinitialiser » dans les Réglages fait la même chose sans désinstaller.</p>
+  <h2>Les photographies d'étiquettes</h2>
+  <p>Quand un produit n'est pas dans notre catalogue, ou que sa fiche n'a pas ce qu'il faut pour le noter, Flipside propose de lire l'étiquette avec votre appareil photo. On vous demande une photographie de la liste d'ingrédients, et une de l'avant du paquet pour que d'autres personnes reconnaissent le produit.</p>
+  <p><strong>Ces photographies sont envoyées à un service de lecture pour être transcrites.</strong> Elles passent par notre propre serveur, qui les transmet à l'API Gemini de Google et reçoit en retour les mots imprimés sur l'étiquette — la liste d'ingrédients, les chiffres nutritionnels, la marque et le nom du produit. C'est tout ce qui est demandé au service ; il ne lui est pas demandé de juger l'aliment, et la note elle-même est calculée sur votre téléphone ensuite.</p>
+  <p>Ce que cela veut dire en pratique :</p>
+  <ul>
+  <li><strong>Nous ne gardons pas la photographie de l'étiquette.</strong> Notre serveur la transmet et renvoie le texte. Rien à son sujet n'est écrit dans une base de données ni dans un stockage de fichiers. La photographie de <em>l'avant</em> du paquet est la seule exception et elle est décrite plus bas ; ni l'une ni l'autre n'est rattachée à vous, à un compte ou à un identifiant quelconque.</li>
+  <li><strong>Google ne s'en sert pas pour entraîner ses modèles.</strong> Flipside utilise l'API Gemini payante, qui comporte une restriction contractuelle interdisant d'utiliser le contenu soumis pour améliorer les produits de Google. Leur offre gratuite ne comporte pas cette restriction, et nous ne l'utilisons pas. Les conditions de Google régissent la courte période pendant laquelle une requête est conservée à des fins de surveillance des abus.</li>
+  <li><strong>La photographie de l'avant du paquet est conservée, et d'autres personnes la voient.</strong> Elle devient la vignette du produit dans votre propre historique, et elle est aussi stockée en regard du code-barres pour que la personne suivante qui scanne ce produit voie le paquet plutôt qu'un rond gris vide. Elle n'est stockée que si le service de lecture confirme que la photographie montre l'extérieur d'un aliment ou d'une boisson emballés ; tout le reste est écarté et reste sur votre téléphone. Seule la première photographie d'un code-barres est conservée — une suivante est refusée, donc personne ne peut remplacer l'image d'un produit une fois qu'elle existe. Le fichier porte le nom du code-barres et rien d'autre : il ne comporte aucun identifiant, aucune date, aucune localisation et rien sur la personne qui l'a prise, et il ne peut être ni relié à vous ni rapproché d'une autre photographie. <strong>La photographie du tableau des ingrédients n'est jamais conservée</strong> — elle est transmise au service de lecture, transcrite, puis abandonnée. Si vous préférez ne pas contribuer d'image, passez la seconde photographie : la lecture fonctionne à partir du seul tableau des ingrédients.</li>
+  <li><strong>Si le service de lecture est injoignable, la lecture se fait entièrement sur votre téléphone</strong> avec le module de reconnaissance intégré à l'application, et dans ce cas aucune photographie ne quitte l'appareil. Lire une étiquette fonctionne toujours hors ligne ; cela marche seulement moins bien sur les emballages courbes.</li>
+  </ul>
+  <p>Ce qu'une lecture partage avec les autres utilisateurs, c'est le <em>texte</em> du tableau et l'image de l'avant du paquet — voir « Les lectures d'étiquettes que vous apportez » plus bas, y compris pourquoi il n'y a plus d'interrupteur pour le texte.</p>
+  <h2>Expliquer un ingrédient</h2>
+  <p>Toucher un mot signalé dans une liste d'ingrédients ouvre ce qu'est cette substance, ce qu'elle fait dans l'aliment, et sa limite journalière publiée lorsqu'il en existe une. <strong>Tout cela est écrit dans l'application et fonctionne sans le moindre réseau.</strong></p>
+  <p>En dessous se trouve un bouton <em>Expliquer en mots simples</em>. Uniquement si vous appuyez dessus, nous envoyons au même service de lecture : <strong>le nom de ce seul ingrédient, la phrase que l'application vient de vous montrer, le nom du produit et la langue réglée dans l'application</strong> — et, dans un seul cas, <strong>le nom d'un allergène dont vous avez demandé à être averti.</strong> La réponse revient, s'affiche sous la phrase que vous aviez déjà, et reste en mémoire jusqu'à ce que vous fermiez l'application.</p>
+  <p><strong>À propos de cet allergène.</strong> Si vous avez dit à Flipside de vous avertir au sujet du lait, et que l'application vous a déjà averti au sujet du lait sur le produit que vous regardez, alors appuyer sur ce bouton envoie aussi le mot <em>Lait</em> — pour que la réponse puisse dire lequel des ingrédients est la raison de l'avertissement. C'est tout, et les limites méritent d'être dites clairement :</p>
+  <ul>
+  <li>Il n'est envoyé <strong>que lorsque l'avertissement est déjà à l'écran</strong> pour ce produit. Un allergène dont vous avez demandé à être averti mais que ce produit ne contient pas n'est jamais envoyé.</li>
+  <li>C'est la conclusion de l'application, pas votre liste. Le service de lecture n'apprend jamais ce que vous évitez en général, quel régime vous suivez, si vous faites les courses pour un enfant, ni quoi que ce soit d'autre issu de vos réponses.</li>
+  <li>Rien n'est envoyé sans que vous appuyiez sur le bouton. Jamais lors d'un scan, jamais en arrière-plan.</li>
+  <li>Cela ne comporte aucun identifiant, de sorte que deux personnes lisant dans la même langue et touchant le même mot sur le même produit envoient des requêtes identiques : il n'y a aucun moyen de les distinguer ni de rapprocher deux requêtes. La langue est envoyée pour que la réponse revienne dans cette langue, et c'est le réglage de l'application plutôt que quelque chose vous concernant.</li>
+  <li>Il n'est jamais dit au service si un produit vous convient, et il lui est demandé de ne jamais le dire. <strong>Savoir si vous pouvez manger quelque chose vient de la mention « Contient » de l'étiquette et de votre médecin</strong> — pas d'une phrase écrite par un modèle.</li>
+  </ul>
+  <p>Une allergie est une information de santé, et c'est pourquoi elle est décrite ici avec ce niveau de détail plutôt que repliée dans la phrase précédente. Si vous préférez qu'elle ne quitte jamais l'appareil, n'appuyez pas sur le bouton, ou retirez l'allergène dans les Réglages.</p>
+  <p>Si le service est injoignable, l'application garde simplement l'explication qu'elle vous a déjà donnée.</p>
+  <h2>Ce qui quitte votre téléphone</h2>
+  <p>Les photographies que vous prenez d'une étiquette en font partie et sont décrites en entier dans la section ci-dessus, tout comme l'explication d'un ingrédient. Le reste est ci-dessous.</p>
+  <h3>1. Le code-barres que vous scannez</h3>
+  <p><strong>Seulement quand le téléphone n'a pas déjà le produit.</strong> Si vous avez téléchargé le fichier des produits décrit plus haut et que le code-barres s'y trouve, la note est calculée sur votre appareil et aucune requête n'est faite. Ce qui suit vaut pour le reste — les nouveaux produits, ceux que le fichier ne couvre pas, et chaque scan sur un téléphone qui ne l'a pas téléchargé.</p>
+  <p>Pour chercher un produit, le code-barres est envoyé à :</p>
+  <ul>
+  <li><strong>Open Food Facts</strong> (openfoodfacts.org), une base de données alimentaire ouverte. Leurs serveurs reçoivent le code-barres et, comme pour toute requête internet, l'adresse IP de votre appareil. Leur politique de confidentialité régit ce qu'ils en font.</li>
+  <li><strong>USDA FoodData Central</strong>, une base alimentaire du gouvernement américain — jointe par notre propre serveur, de sorte que l'USDA voit notre requête et non votre appareil.</li>
+  </ul>
+  <p>Quand notre fiche pour un code-barres n'a pas de liste d'ingrédients, nous demandons aussi à Open Food Facts s'il détient une autre fiche du même produit — la même base, une requête de plus, portant la marque et le nom du produit plutôt que quoi que ce soit vous concernant.</p>
+  <p>Nous ne gardons aucune trace des codes-barres que vous avez scannés. L'historique est sur votre téléphone uniquement.</p>
+  <h3>2. Les lectures d'étiquettes que vous apportez</h3>
+  <p>Quand vous photographiez un tableau que nous ne pouvions pas lire autrement, ses chiffres sont ajoutés à un enregistrement partagé, pour que la personne suivante qui scanne ce produit les obtienne aussi. C'est ainsi que l'application s'améliore : chaque étiquette lue une fois est un produit que personne d'autre n'a à photographier.</p>
+  <p><strong>La photographie du tableau n'en fait jamais partie</strong> — seulement les mots qui y étaient imprimés. La photographie de <em>l'avant</em> du paquet est partagée, comme chose distincte, selon les règles de « Les photographies d'étiquettes » ci-dessus : seulement si le service de lecture confirme qu'il s'agit d'un aliment emballé, seulement la première par code-barres, nommée d'après le code-barres et ne portant rien d'autre.</p>
+  <p>Ce qui est envoyé :</p>
+  <ul>
+  <li>le code-barres</li>
+  <li>les chiffres nutritionnels du tableau</li>
+  <li>le texte de la liste d'ingrédients</li>
+  <li>la date, <strong>arrondie au jour</strong></li>
+  <li>la photographie de l'avant du paquet, si vous en avez pris une</li>
+  </ul>
+  <p>Ce qui n'est <strong>pas</strong> envoyé, et n'est stocké nulle part dans cet enregistrement :</p>
+  <ul>
+  <li>aucun identifiant d'appareil</li>
+  <li>aucun compte (il n'y en a pas)</li>
+  <li>votre adresse IP</li>
+  <li>votre localisation</li>
+  <li>quoi que ce soit d'autre sur vous ou sur votre téléphone</li>
+  </ul>
+  <p>Parce qu'aucun identifiant n'est stocké, deux personnes photographiant le même pot produisent des entrées identiques. Il n'y a aucun moyen — ni pour nous, ni pour qui que ce soit lisant la base — de savoir de quelle personne vient quelle lecture, ni de rapprocher deux lectures. C'est aussi pourquoi nous ne pouvons pas proposer de supprimer « vos » contributions : une fois faites, rien ne les marque comme vôtres.</p>
+  <p><strong>Il y avait un interrupteur pour cela dans les Réglages, retiré le 18 août 2026.</strong> Ce qui circule est une liste d'ingrédients et un tableau nutritionnel — le texte imprimé à l'extérieur d'un paquet, ne portant rien sur la personne qui l'a lu — et demander la permission pour cela suggérait un risque qui n'existe pas. Si vous préférez qu'une lecture donnée ne figure pas dans l'enregistrement partagé, écrivez-nous et nous pouvons retirer ou masquer les entrées d'un code-barres.</p>
+  <h3>3. Les signalements</h3>
+  <p><strong>« Cette note semble fausse »</strong> sur un produit nous envoie un signalement quand vous appuyez dessus. Ce qui est envoyé, c'est le code-barres, l'étiquette à partir de laquelle la note a été calculée, la note elle-même et la version du calcul qui l'a produite — la même forme, et les mêmes règles, qu'une lecture d'étiquette partagée :</p>
+  <ul>
+  <li>aucun identifiant d'appareil</li>
+  <li>aucun compte (il n'y en a pas)</li>
+  <li>aucune localisation</li>
+  <li>rien d'autre sur vous ou sur votre téléphone</li>
+  <li>la date, <strong>arrondie au jour</strong></li>
+  </ul>
+  <p>Nous l'envoyons parce que le désaccord n'est utile qu'avec l'étiquette jointe : la plupart des signalements concernent des produits dont la fiche publique est trop maigre pour bien noter, et avec l'étiquette nous pouvons refaire exactement ce que l'application a fait et le vérifier. Personne ne peut relire cette table — les signalements y entrent et ne sont jamais lisibles depuis l'application ni par qui que ce soit l'utilisant.</p>
+  <p><strong>Les rapports de plantage sont autre chose et vous demandent toujours.</strong> Si l'application tombe en panne, elle prépare un rapport et le remet à la feuille de partage de votre téléphone : rien n'est envoyé tant que vous ne choisissez pas de l'envoyer, et cela part où vous l'envoyez. Ce rapport contient l'erreur et l'endroit de l'application où elle s'est produite, et rien vous concernant.</p>
+  <h3>4. Les décomptes de ce que l'application n'a pas su faire</h3>
+  <p>Flipside tient un petit nombre de décomptes journaliers sur notre propre serveur, pour que nous puissions voir quand l'application échoue à quelque chose. Il n'y a aucun service d'analyse, aucun SDK, et rien qui suive une personne d'un écran à l'autre, d'un scan à l'autre ou d'un jour à l'autre.</p>
+  <p>Ce qui est compté, c'est une liste d'une vingtaine de choses qui ont marché ou non : un scan qui a produit une note, un scan que nous avons refusé de noter, un scan où nous n'avons pu lire qu'une partie de l'étiquette, un code-barres que notre catalogue ne contient pas, une étiquette lue à distance, une étiquette lue sur le téléphone à la place, une photographie qui n'a toujours pas suffi pour noter, et si un produit avait de meilleures options à montrer.</p>
+  <p>Six de ces décomptes portent <strong>le code-barres</strong> — ceux qui concernent un produit pour lequel nous n'avons pas su répondre. C'est ainsi que nous découvrons quels produits échouent, pour les corriger. Un code-barres est un fait sur un paquet en rayon, pas sur la personne qui le tient.</p>
+  <p>Le reste de la liste concerne l'application plutôt qu'un produit : l'application a été ouverte, l'application est tombée en panne, la configuration a été commencée, la configuration a été terminée, le prix de l'abonnement a été montré, un abonnement a été acheté, un abonnement a été restauré, et un achat que l'App Store a refusé. Ce sont les chiffres qui nous disent si l'application fonctionne pour les gens qui l'installent, et aucun d'eux ne porte de code-barres ni quoi que ce soit d'autre.</p>
+  <p><strong>Celui qui concerne la panne est un décompte et non un rapport de plantage.</strong> Il enregistre que l'écran d'erreur est apparu, et rien d'autre — aucun message d'erreur, aucun endroit dans l'application, aucune version. Le vrai rapport de plantage est la chose distincte décrite à la section 3, et il n'est jamais envoyé sans que vous choisissiez de l'envoyer.</p>
+  <p>Ce qui est stocké, c'est un total courant par jour. Ce qui n'est <strong>pas</strong> stocké, nulle part là-dedans :</p>
+  <ul>
+  <li>aucun identifiant d'appareil</li>
+  <li>aucun compte (il n'y en a pas)</li>
+  <li>votre adresse IP</li>
+  <li>votre localisation</li>
+  <li>l'heure de la journée</li>
+  <li>quels décomptes viennent du même téléphone, du même scan ou de la même personne</li>
+  <li>l'écran où vous vous êtes arrêté, ni le temps passé où que ce soit</li>
+  <li>quoi que ce soit vous concernant, vous ou votre téléphone</li>
+  </ul>
+  <p>Rien ici ne suit une personne d'un écran au suivant. Chacun de ces chiffres est son propre total journalier, et ils ne peuvent pas être rapprochés : « quarante personnes ont ouvert l'application » et « neuf personnes ont terminé la configuration » sont deux nombres, et nous n'avons aucun moyen de savoir si l'une quelconque des quarante était l'une des neuf.</p>
+  <p>Parce qu'il n'y a ni identifiant ni horodatage plus fin que le jour, un décompte est un nombre et rien d'autre : nous n'avons, pas plus que quiconque, aucun moyen de savoir quel téléphone s'y est ajouté ni de rapprocher deux décomptes. Personne ne peut relire cette table depuis l'application.</p>
+  <p>Nous avons ajouté cela parce que l'autre solution était pire. Chaque défaut que nous avons corrigé a été trouvé en testant sur notre propre téléphone ; ce qui ne va mal que sur celui de quelqu'un d'autre restait simplement cassé, silencieusement, pour tout le monde. Un décompte qui dit « un scan sur douze de ce code-barres se termine sans note » fait toute la différence.</p>
+  <h3>5. Votre abonnement</h3>
+  <p>Les abonnements sont gérés entièrement par Apple. Les données de paiement ne sont jamais vues par Flipside — nous recevons seulement le fait qu'un abonnement est actif ou non. La politique de confidentialité d'Apple couvre cette transaction.</p>
+  <h2>Les enfants</h2>
+  <p>Flipside ne s'adresse pas aux enfants de moins de 13 ans, et nous ne collectons pas sciemment d'informations les concernant. L'application a un réglage pour scanner <em>pour</em> des enfants ; cette préférence est stockée sur le téléphone et n'est envoyée nulle part.</p>
+  <h2>Vos droits</h2>
+  <p>Le droit de la protection des données vous donne des droits d'accès, de rectification et d'effacement des informations personnelles détenues sur vous.</p>
+  <p>Il n'y a ni compte ni profil, et rien dans nos enregistrements n'identifie une personne — donc il n'y a aucun dossier à vous envoyer, à corriger ou à supprimer. Supprimer l'application efface tout ce qui est détenu sur votre téléphone.</p>
+  <p>Si vous pensez qu'une entrée d'étiquette partagée est fausse, appuyez sur <strong>« Cette note semble fausse »</strong> sur le produit ou écrivez-nous — nous pouvons retirer ou masquer les entrées d'un code-barres.</p>
+  <h2>Si vous êtes au Royaume-Uni ou dans l'Union européenne</h2>
+  <p>Cette section redit les mêmes choses dans les mots qu'emploient le RGPD européen et le RGPD britannique. Rien ici ne décrit un comportement de l'application qui ne soit pas déjà décrit plus haut.</p>
+  <p><strong>Qui est responsable.</strong> CyborgDev est le responsable du traitement pour cette application. Vous pouvez nous joindre à <strong><a href="mailto:support@cyborgdev.co">support@cyborgdev.co</a></strong>, la seule adresse que nous utilisons.</p>
+  <p><strong>Sur quoi nous nous fondons.</strong> Presque rien ici n'est une information sur une personne, et là où le droit parlerait de données personnelles, voici pourquoi nous les traitons :</p>
+  <ul>
+  <li><strong>Pour répondre au scan que vous avez demandé</strong> — le code-barres part vers la base de produits, et une photographie part vers le service de lecture. C'est ce pour quoi vous avez ouvert l'application, donc nous le faisons pour exécuter notre accord avec vous.</li>
+  <li><strong>Pour que l'application marche pour la personne suivante</strong> — une lecture d'étiquette apportée, un signalement que vous envoyez, et les décomptes journaliers. Notre intérêt légitime à un scanner alimentaire qui répond à plus de codes-barres demain qu'aujourd'hui. Aucun d'eux ne porte quoi que ce soit qui vous identifie, et c'est ce qui empêche cet intérêt de vous coûter quelque chose.</li>
+  <li><strong>Pour vous vendre un abonnement</strong> — Apple gère le paiement et nous dit seulement si un abonnement est actif ; c'est notre accord avec vous.</li>
+  </ul>
+  <p><strong>Combien de temps les choses sont gardées.</strong> Une lecture d'étiquette apportée et un signalement restent aussi longtemps que le produit figure dans l'enregistrement partagé, car c'est tout leur intérêt — ce sont des faits sur un paquet, pas sur une personne. Un décompte journalier est un nombre dans une ligne par jour et est conservé sans limite ; il n'y a rien dedans qui puisse expirer. Ce qui est sur votre téléphone y reste jusqu'à ce que vous le supprimiez.</p>
+  <p><strong>Où cela va.</strong> Notre serveur et l'enregistrement partagé des étiquettes sont aux États-Unis (Virginie). Une photographie d'étiquette est transmise de là à l'API Gemini payante de Google, qui ne s'en sert pas pour l'entraînement. Les informations que vous envoyez quittent donc le Royaume-Uni et l'Union européenne. Nous nous appuyons pour ce transfert sur les clauses contractuelles types proposées par nos prestataires ; <strong>c'est la seule phrase de cette page qu'un juriste doit relire avant que nous la publiions sur un marché européen.</strong></p>
+  <p><strong>Votre adresse IP.</strong> Comme pour toute requête sur internet, la connexion elle-même porte votre adresse IP jusqu'au serveur qui répond. Elle n'est écrite dans aucun enregistrement que nous gardons — ni l'enregistrement partagé des étiquettes, ni un signalement, ni un décompte — et nous ne lisons pas les journaux de connexion de nos prestataires.</p>
+  <p><strong>Rien ici ne décide quoi que ce soit à votre sujet.</strong> Une note est un jugement sur un aliment, pas sur une personne. Il n'y a pas de profilage, pas de décision automatisée produisant un effet juridique ou comparable, et pas de publicité.</p>
+  <p><strong>Vos droits.</strong> Vous pouvez nous demander l'accès aux données personnelles que nous détiendrions sur vous, leur rectification, leur effacement, la limitation de leur traitement ou leur remise sous une forme portable, et vous pouvez vous opposer à leur traitement. En pratique il n'y a rien à vous envoyer : il n'y a pas de compte, rien de ce que nous stockons ne porte d'identifiant, et rien dans nos enregistrements ne peut être rattaché à une personne, donc il n'existe aucun dossier à votre nom. Si vous pensez qu'une entrée d'étiquette partagée est fausse, écrivez-nous et nous pouvons retirer ou masquer les entrées d'un code-barres.</p>
+  <p><strong>Et vous pouvez réclamer.</strong> Si vous pensez que nous nous y prenons mal, vous pouvez saisir l'autorité de protection des données de votre pays — la CNIL en France, l'ICO au Royaume-Uni, l'autorité de votre Land en Allemagne — en plus de nous écrire, ou à la place.</p>
+  <h2>Modifications de cette politique</h2>
+  <p>Si elle change, la date en haut change avec elle, et tout changement portant sur ce qui quitte votre téléphone sera dit clairement dans l'application avant de prendre effet.</p>
+  <h2>Contact</h2>
+  <p>Des questions sur cette politique, ou sur tout ce qui précède :</p>
+  <p><strong><a href="mailto:support@cyborgdev.co">support@cyborgdev.co</a></strong></p>
+</div>
+
+</body>
+</html>
