@@ -19,7 +19,7 @@
 <div class="container">
   <div class="badge">Legal</div>
   <h1>Privacy Policy — Flipside</h1>
-  <p class="meta">Last updated: September 4, 2026 &nbsp;·&nbsp; CyborgDev</p>
+  <p class="meta">Last updated: September 6, 2026 &nbsp;·&nbsp; CyborgDev</p>
 
   <p>Flipside scans food labels and scores them. This policy says what the app does with information, in plain language.</p>
   <p>Three things are worth knowing up front, and the rest of this page is the detail behind them:</p>
@@ -105,13 +105,15 @@
   <li>the date, <strong>rounded to the day</strong></li>
   </ul>
   <p>We send it because the disagreement is only useful with the label attached: most reports turn out to be products whose public record is too thin to score well, and with the label we can rebuild exactly what the app did and check it. Nobody can read that table back out — reports go in and are never readable from the app or by anyone using it.</p>
-  <p><strong>Crash reports are different and still ask you.</strong> If the app falls over it prepares a report and hands it to your phone's share sheet: nothing is sent until you choose to send it, and it goes wherever you send it. That report contains the error and where in the app it happened, and nothing about you.</p>
+  <p><strong>Crash reports are sent automatically to Sentry so that we can fix the place where the app broke.</strong> A report contains the error message and readable stack trace, the Flipside version and build, the exact over-the-air update and runtime, the operating-system version, device model and JavaScript engine. Sentry keeps error reports for 30 days on its free plan.</p>
+  <p>Crash reporting is configured without session replay, screenshots, performance monitoring, logs, request capture or automatic breadcrumbs. Reports do not contain scan history, photographs, preferences, barcodes, product or request contents, an account or a device identifier. IP addresses are not stored. A filter in the app removes those fields before a JavaScript report is sent, and the same server-side rules cover native crash reports.</p>
+  <p>The error screen still offers a separate share-sheet report. That copy leaves only if you choose to send it, and it goes wherever you choose.</p>
   <h3>4. Counts of what the app could not do</h3>
-  <p>Flipside keeps a small number of daily counts on our own server, so that we can see when the app is failing at something. There is no analytics service, no SDK, and nothing that follows a person between screens, between scans or between days.</p>
+  <p>Flipside keeps a small number of daily counts on our own server, so that we can see when the app is failing at something. This is separate from Sentry crash diagnostics, and nothing follows a person between screens, between scans or between days.</p>
   <p>What is counted is a list of about two dozen things that either worked or did not: a scan that produced a score, a scan we refused to score, a scan where we could only read part of the label, a barcode our catalogue does not hold, a label read in the cloud, a label read on the phone instead, a photograph that still did not yield enough to score, and whether a product had any better options to show.</p>
   <p>Six of those counts carry <strong>the barcode</strong> — the ones about a product we could not answer for. That is how we find out which products are failing, so we can fix them. A barcode is a fact about a packet on a shelf, not about the person holding it.</p>
-  <p>The rest of the list is about the app rather than about a product: the app was opened, the app fell over, the setup was begun, the setup was finished, the subscription price was shown, a subscription was bought, a subscription was restored, and a purchase the App Store refused. Those are the numbers that tell us whether the app is working for the people who install it, and none of them carries a barcode or anything else.</p>
-  <p><strong>The one about falling over is a tally and not a crash report.</strong> It records that the error screen appeared, and nothing else — no error message, no place in the app, no version. The actual crash report is the separate thing described in section 3, and it is never sent unless you choose to send it.</p>
+  <p>The rest of the list is about the app rather than about a product: the app was opened, the app fell over, the setup was begun, the setup was finished, the subscription price was shown, a subscription was bought, a subscription was restored, a purchase waiting for parental approval, and a purchase the App Store refused. Those are the numbers that tell us whether the app is working for the people who install it, and none of them carries a barcode or anything else.</p>
+  <p><strong>The one about falling over is still only a tally.</strong> It records that the error screen appeared and nothing else. The diagnostic report described in section 3 is sent separately to Sentry.</p>
   <p>What is stored is a running total per day. What is <strong>not</strong> stored, anywhere in it:</p>
   <ul>
   <li>any device identifier</li>
